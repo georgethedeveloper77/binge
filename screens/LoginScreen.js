@@ -27,7 +27,7 @@ export default class LoginScreen extends React.Component {
   render() {
     return (
       <View styles={styles.container}>
-        <Text style={styles.greeting}>{`Hello again./nWelcome back`}</Text>
+        <Text style={styles.greeting}>{`Hello again.\nWelcome back`}</Text>
 
         <View style={styles.errorMessage}>
           {this.state.errorMessage && (
@@ -58,7 +58,7 @@ export default class LoginScreen extends React.Component {
         </View>
 
         <TouchableOpacity style={styles.button} onPress={this.handleLogin}>
-          <Text style={{ color: "FFF", fontWeight: "500" }}>Sign in</Text>
+          <Text style={{ color: "#414959", fontWeight: "500" }}>Sign in</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -66,8 +66,8 @@ export default class LoginScreen extends React.Component {
           onPress={() => this.props.navigation.navigate("Register")}
         >
           <Text style={{ color: "#414959", fontSize: 13 }}>
-            Hello New Member?{" "}
-            <Text style={{ color: "#E9446A", fontWeight: "500" }}>Sign Up</Text>
+            Hello, New Member?
+            <Text style={{ fontWeight: "500", color: "#E9446A"}}>Sign Up</Text>
           </Text>
         </TouchableOpacity>
       </View>

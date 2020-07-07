@@ -21,7 +21,7 @@ export default class RegisterScreen extends React.Component {
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((userCredentials) => {
-        return userCredentials.user.updatePassword({
+        return userCredentials.user.updateProfile({
           displayName: this.state.name,
         });
       })
@@ -33,7 +33,7 @@ export default class RegisterScreen extends React.Component {
       <View styles={styles.container}>
         <Text
           style={styles.greeting}
-        >{`Hello ./n Sign Up to get Started`}</Text>
+        >{`Hello!!.\nSign Up to get Started`}</Text>
 
         <View style={styles.errorMessage}>
           {this.state.errorMessage && (
@@ -75,10 +75,13 @@ export default class RegisterScreen extends React.Component {
         </View>
 
         <TouchableOpacity style={styles.button} onPress={this.handleSignUp}>
-          <Text style={{ color: "FFF", fontWeight: "500" }}>Sign Up</Text>
+          <Text style={{ color: "#414959", fontSize: 13 }}>Sign Up</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{ alignSelf: "center", marginTop: 32 }}>
+        <TouchableOpacity
+          style={{ alignSelf: "center", marginTop: 32 }}
+          onPress={() => this.props.navigation.navigate("Login")}
+        >
           <Text style={{ color: "#414959", fontSize: 13 }}>
             Hello Member!
             <Text style={{ color: "#E9446A", fontWeight: "500" }}>Login</Text>
@@ -126,6 +129,8 @@ const styles = StyleSheet.create({
     height: 40,
     fontSize: 15,
     color: "#161F3D",
+    borderColor: "gray", //new
+    borderWidth: 1,
   },
   button: {
     marginHorizontal: 38,
