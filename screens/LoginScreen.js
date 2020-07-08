@@ -5,10 +5,17 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  Image,
+  StatusBar,
+  LayoutAnimation,
 } from "react-native";
 import * as firebase from "firebase";
 
 export default class LoginScreen extends React.Component {
+  static navigationOptions = {
+    header: null
+  }
+
   state = {
     email: "",
     password: "",
@@ -25,8 +32,27 @@ export default class LoginScreen extends React.Component {
   };
 
   render() {
+    LayoutAnimation.easeInEaseOut()
+
     return (
       <View styles={styles.container}>
+        <StatusBar barStyle="light-content"></StatusBar>
+
+        <Image 
+        source={require('../assets/authHeader.png')} 
+        style={{marginTop: -176, marginLeft: -50}}
+        ></Image>
+
+        <Image 
+        source={require('../assets/authFooter.png')} 
+        style={{position: 'absolute', bottom: -325, right: -225 }}
+        ></Image>
+
+        <Image
+        source={require('../assets/loginLogo.png')}
+        style={{marginTop: -110, alignSelf:'center' }}
+        ></Image>
+        
         <Text style={styles.greeting}>{`Hello again.\nWelcome back`}</Text>
 
         <View style={styles.errorMessage}>
@@ -67,7 +93,7 @@ export default class LoginScreen extends React.Component {
         >
           <Text style={{ color: "#414959", fontSize: 13 }}>
             Hello, New Member?
-            <Text style={{ fontWeight: "500", color: "#E9446A"}}>Sign Up</Text>
+            <Text style={{ fontWeight: "500", color: "#E9446A" }}>Sign Up</Text>
           </Text>
         </TouchableOpacity>
       </View>
@@ -80,8 +106,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   greeting: {
-    marginTop: 32,
-    fontSize: 12,
+    marginTop: -32,
+    fontSize: 18,
     fontWeight: "500",
     textAlign: "center",
   },
