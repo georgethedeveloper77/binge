@@ -46,9 +46,8 @@ export default class RegisterScreen extends React.Component {
             <Text style={styles.inputTitle}>Full Name</Text>
             <TextInput
               style={styles.input}
-              autoCapitalize="none"
               onChangeText={(name) => this.setState({ name })}
-              value={this.setState.name}
+              value={this.state.name}
             ></TextInput>
           </View>
 
@@ -58,7 +57,7 @@ export default class RegisterScreen extends React.Component {
               style={styles.input}
               autoCapitalize="none"
               onChangeText={(email) => this.setState({ email })}
-              value={this.setState.email}
+              value={this.state.email}
             ></TextInput>
           </View>
 
@@ -69,7 +68,7 @@ export default class RegisterScreen extends React.Component {
               secureTextEntry
               autoCapitalize="none"
               onChangeText={(password) => this.setState({ password })}
-              value={this.setState.password}
+              value={this.state.password}
             ></TextInput>
           </View>
         </View>

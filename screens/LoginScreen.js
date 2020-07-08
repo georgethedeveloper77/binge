@@ -42,7 +42,7 @@ export default class LoginScreen extends React.Component {
               style={styles.input}
               autoCapitalize="none"
               onChangeText={(email) => this.setState({ email })}
-              value={this.setState.email}
+              value={this.state.email}
             ></TextInput>
           </View>
           <View style={{ marginTop: 32 }}>
@@ -52,7 +52,7 @@ export default class LoginScreen extends React.Component {
               secureTextEntry
               autoCapitalize="none"
               onChangeText={(password) => this.setState({ password })}
-              value={this.setState.password}
+              value={this.state.password}
             ></TextInput>
           </View>
         </View>
@@ -81,8 +81,8 @@ const styles = StyleSheet.create({
   },
   greeting: {
     marginTop: 32,
-    fontSize: 10,
-    fontWeight: "400",
+    fontSize: 12,
+    fontWeight: "500",
     textAlign: "center",
   },
   errorMessage: {
