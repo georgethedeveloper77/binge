@@ -3,6 +3,7 @@ import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { Ionicons } from "@expo/vector-icons";
+import { Octicons } from '@expo/vector-icons';
 
 import LoadingScreen from "./screens/LoadingScreen";
 import LoginScreen from "./screens/LoginScreen";
@@ -35,7 +36,7 @@ const AppTabNavigator = createBottomTabNavigator(
       screen: HomeScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <Ionicons name="ios-home" size={24} color={tintColor} />
+          <Ionicons name="ios-home" size={26} color={tintColor} />
         ),
       },
     },
@@ -43,7 +44,7 @@ const AppTabNavigator = createBottomTabNavigator(
       screen: MessageScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <Ionicons name="ios-chatboxes" size={48} color={tintColor} />
+          <Ionicons name="ios-chatboxes" size={25} color={tintColor} />
         ),
       },
     },
@@ -52,9 +53,9 @@ const AppTabNavigator = createBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <Ionicons
-            name="ios add circle"
-            size={24}
-            color="E9446A"
+            name="ios-add-circle"
+            size={48}
+            color="red"
             style={{
               shadowColor: "E9446A",
               shadowOffset: {
@@ -72,7 +73,7 @@ const AppTabNavigator = createBottomTabNavigator(
       screen: NotificationScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <Ionicons name="ios-notifications" size={24} color={tintColor} />
+          <Ionicons name="ios-notifications" size={25} color={tintColor} />
         ),
       },
     },
@@ -80,7 +81,7 @@ const AppTabNavigator = createBottomTabNavigator(
       screen: ProfileScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <Ionicons name="ios person" size={24} color={tintColor} />
+          <Ionicons name="ios-contact" size={24} color="black" />
         ),
       },
     },

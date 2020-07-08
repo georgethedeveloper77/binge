@@ -8,7 +8,7 @@ import {
   Image,
   StatusBar,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons } from '@expo/vector-icons';
 import * as firebase from "firebase";
 
 export default class RegisterScreen extends React.Component {
@@ -40,10 +40,10 @@ export default class RegisterScreen extends React.Component {
       <View styles={styles.container}>
         <StatusBar barStyle="light-content"></StatusBar>
 
-        <Image
+        {/*<Image
           source={require("../assets/authHeader.png")}
           style={{ marginTop: -116, marginLeft: -50 }}
-        ></Image>
+        ></Image> 
 
         <Image
           source={require("../assets/authFooter.png")}
@@ -59,7 +59,7 @@ export default class RegisterScreen extends React.Component {
             size={12}
             color="#FFF"
           ></IonIcons>
-        </TouchableOpacity>
+        </TouchableOpacity>*/}
 
         <View
           style={{
@@ -72,14 +72,14 @@ export default class RegisterScreen extends React.Component {
           <Text
             style={styles.greeting}
           >{`Hello!!.\nSign Up to get Started`}</Text>
-          <TouchableOpacity style={styles.avatar}>
+          {/*<TouchableOpacity style={styles.avatar}>
             <IonIcons
               name="ios-add"
               size={40}
               color="#FFF"
               style={{ marginTop: 6, marginLeft: 2 }}
             ></IonIcons>
-          </TouchableOpacity>
+          </TouchableOpacity>*/}
         </View>
 
         <View style={styles.errorMessage}>
