@@ -8,7 +8,7 @@ import {
   Image,
   StatusBar,
 } from "react-native";
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons } from "@expo/vector-icons";
 import * as firebase from "firebase";
 
 export default class RegisterScreen extends React.Component {
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontWeight: "400",
     textAlign: "center",
-    color: "#FFF"
+    color: "#FFF",
   },
   errorMessage: {
     height: 72,
@@ -205,6 +205,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#E1E2E6",
     marginTop: 48,
     justifyContent: "center",
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 });

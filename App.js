@@ -43,9 +43,17 @@ const AppTabNavigator = createBottomTabNavigator(
       screen: MessageScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
+          <Ionicons name="ios-chatboxes" size={48} color={tintColor} />
+        ),
+      },
+    },
+    Post: {
+      screen: PostScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
           <Ionicons
-            name="ios-chatboxes"
-            size={48}
+            name="ios add circle"
+            size={24}
             color="E9446A"
             style={{
               shadowColor: "E9446A",
@@ -57,14 +65,6 @@ const AppTabNavigator = createBottomTabNavigator(
               shadowOpacity: 0.3,
             }}
           />
-        ),
-      },
-    },
-    Post: {
-      screen: PostScreen,
-      navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
-          <Ionicons name="ios add circle" size={24} color={tintColor} />
         ),
       },
     },
@@ -95,15 +95,15 @@ const AppTabNavigator = createBottomTabNavigator(
 );
 
 const AuthStack = createStackNavigator({
-  Register: RegisterScreen,
   Login: LoginScreen,
+  Register: RegisterScreen,
 });
 
 export default createAppContainer(
   createSwitchNavigator(
     {
       Loading: LoadingScreen,
-      App: AppStack,
+      App: AppTabNavigator,
       Auth: AuthStack,
     },
     {
