@@ -6,6 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
+  ImageBackground,
   StatusBar,
   LayoutAnimation,
 } from "react-native";
@@ -37,6 +38,22 @@ export default class LoginScreen extends React.Component {
     return (
       <View styles={styles.container}>
         <StatusBar barStyle="light-content"></StatusBar>
+        <View style={styles.header}>
+              <ImageBackground
+                source={require("./header.png")}
+                style={styles.imageBackground}
+              >
+                <Text style={{
+                  color:'white',
+                  fontWeight:'bold',
+                  fontSize:30
+                }}>Welcome Back</Text>
+                <Text style={{
+                  color:'yellow'
+                }}>Sign in to continute</Text>
+
+              </ImageBackground>
+          </View>
 
         {/* <Image
           source={require("../assets/authHeader.png")}
@@ -110,6 +127,16 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "500",
     textAlign: "center",
+  },
+  header: {
+    flex:1,
+  },
+  imageBackground:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+    width:"100%",
+    height:'100%'
   },
   errorMessage: {
     height: 72,
