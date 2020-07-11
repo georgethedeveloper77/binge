@@ -38,9 +38,9 @@ export default class LoginScreen extends React.Component {
     return (
       <View styles={styles.container}>
         <StatusBar barStyle="light-content"></StatusBar>
-        <View style={styles.header}>
+        {/*<View style={styles.header}>
               <ImageBackground
-                source={require("./header.png")}
+                source={require("../assets/header.png")}
                 style={styles.imageBackground}
               >
                 <Text style={{
@@ -53,7 +53,7 @@ export default class LoginScreen extends React.Component {
                 }}>Sign in to continute</Text>
 
               </ImageBackground>
-          </View>
+              </View>*/}
 
         {/* <Image
           source={require("../assets/authHeader.png")}
