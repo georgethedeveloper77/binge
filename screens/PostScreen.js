@@ -9,12 +9,12 @@ import {
   TextInput,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import Constants from "expo-constants";
+import Contants from 'expo-constants';
 import * as Permissions from "expo-permissions";
 import Fire from "../Fire";
-import * as ImagePicker from "expo-image-picker";
+import * as ImagePicker from 'expo-image-picker';
 
-const firebase = require("firebase");
+const firebase = require('firebase');
 require("firebase/firestore");
 
 export default class PostScreen extends React.Component {
@@ -28,8 +28,7 @@ export default class PostScreen extends React.Component {
   }
 
   getPhotoPermission = async () => {
-    if ("Contants.platform.android") {
-      //.ios
+    if (Contants.platform.ios) {  //.android
       const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
 
       if (status != "granted") {
@@ -55,7 +54,7 @@ export default class PostScreen extends React.Component {
 
   pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypesOptions.Images,
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
       aspect: [4, 3],
     });
@@ -71,6 +70,7 @@ export default class PostScreen extends React.Component {
           <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
             <Ionicons name="md-arrow-back" size={24} color="#D8D9D8"></Ionicons>
           </TouchableOpacity>
+          
           <TouchableOpacity onPress={this.handlePost}>
             <Text style={{ fontWeight: "500" }}>Post</Text>
           </TouchableOpacity>

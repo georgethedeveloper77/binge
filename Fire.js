@@ -42,7 +42,7 @@ class Fire {
     const path = `photos/${this.uid}/${Date.now()}.jpg`;
 
     return new Promise(async (res, rej) => {
-      const response = await fetch(url);
+      const response = await fetch(uri);
       const file = await response.blob();
 
       let upload = firestore.storage().ref(path).put(file);
@@ -54,14 +54,14 @@ class Fire {
           rej(err);
         },
         async () => {
-          const url = await upload.snapshot.ref.getDownloadUrl();
+          const url = await upload.snapshot.ref.getDownloadURL();
           res(url);
         }
       );
     });
   };
 
-  get Firebase() {
+  get firestore() {
     return firebase.firestore();
   }
 

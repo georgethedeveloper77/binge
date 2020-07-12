@@ -57,7 +57,7 @@ const AppContainer = createStackNavigator(
               <Ionicons
                 name="ios-add-circle"
                 size={48}
-                color="red"
+                color="E9446A"
                 style={{
                   shadowColor: "E9446A",
                   shadowOffset: {
