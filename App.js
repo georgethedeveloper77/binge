@@ -18,7 +18,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import * as firebase from "firebase";
 import { FirebaseKeys } from "./config";
 
-var firebaseConfig = FirebaseKeys
+var firebaseConfig = FirebaseKeys;
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -107,10 +107,15 @@ const AppContainer = createStackNavigator(
   }
 );
 
-const AuthStack = createStackNavigator({
-  Login: LoginScreen,
-  Register: RegisterScreen,
-});
+const AuthStack = createStackNavigator(
+  {
+    Login: LoginScreen,
+    Register: RegisterScreen,
+  },
+  {
+    initialRouteName: "Register",
+  }
+);
 
 export default createAppContainer(
   createSwitchNavigator(
