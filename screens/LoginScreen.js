@@ -4,7 +4,7 @@ import * as firebase from "firebase";
 
 export default class LoginScreen extends React.Component {
     static navigationOptions = {
-        header: null
+        headerShown: false
     };
 
     state = {
@@ -78,7 +78,7 @@ export default class LoginScreen extends React.Component {
                     onPress={() => this.props.navigation.navigate("Register")}
                 >
                     <Text style={{ color: "#414959", fontSize: 13 }}>
-                        New to SocialApp? <Text style={{ fontWeight: "500", color: "#E9446A" }}>Sign up</Text>
+                        New to Binge? <Text style={{ fontWeight: "500", color: "#E9446A" }}>Sign up</Text>
                     </Text>
                 </TouchableOpacity>
             </View>
