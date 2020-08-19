@@ -1,7 +1,5 @@
 import React from "react";
 import { View, Text, StyleSheet, Button, Image } from "react-native";
-import UserPermissions from "../utilities/UserPermissions";
-import * as ImagePicker from "expo-image-picker";
 import Fire from "../Fire";
 
 export default class ProfileScreen extends React.Component {
@@ -25,20 +23,6 @@ export default class ProfileScreen extends React.Component {
   componentWillUnmount() {
     this.unsubscribe();
   }
-
-  handlePickAvatar = async () => {
-    UserPermissions.getCameraPermission();
-
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: true,
-      aspect: [4, 3],
-    });
-
-    if (!result.cancelled) {
-      this.setState({ user: { ...this.state.user, avatar: result.uri } });
-    }
-  };
 
   render() {
     return (

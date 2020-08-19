@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, Image, FlatList } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import moment from "moment";
+import Fire from "../Fire";
 
 // temporary data until we pull from Firebase
 posts = [
@@ -47,10 +48,10 @@ const firebase = require("firebase");
 require("firebase/firestore");
 
 export default class HomeScreen extends React.Component {
-  renderPost = (post) => {
+  renderPost = (Fire) => {
     return (
       <View style={styles.feedItem}>
-        <Image source={post.avatar} style={styles.avatar} />
+        <Image source={Fire.avatar} style={styles.avatar} />
         <View style={{ flex: 1 }}>
           <View
             style={{
@@ -60,17 +61,17 @@ export default class HomeScreen extends React.Component {
             }}
           >
             <View>
-              <Text style={styles.name}>{post.name}</Text>
+              <Text style={styles.name}>{Fire.name}</Text>
               <Text style={styles.timestamp}>
-                {moment(post.timestamp).fromNow()}
+                {moment(Fire.timestamp).fromNow()}
               </Text>
             </View>
 
             <Ionicons name="ios-more" size={24} color="#73788B" />
           </View>
-          <Text style={styles.post}>{post.text}</Text>
+          <Text style={styles.post}>{Fire.text}</Text>
           <Image
-            source={post.image}
+            source={Fire.image}
             style={styles.postImage}
             resizeMode="cover"
           />

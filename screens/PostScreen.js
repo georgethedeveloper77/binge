@@ -17,6 +17,7 @@ export default class PostScreen extends React.Component {
   state = {
     text: "",
     image: null,
+    user: {},
   };
 
   componentDidMount() {
@@ -61,7 +62,11 @@ export default class PostScreen extends React.Component {
 
         <View style={styles.inputContainer}>
           <Image
-            source={require("../assets/tempAvatar.jpg")}
+            source={
+              this.state.user.avatar
+                ? { uri: this.state.user.avatar }
+                : require("../assets/tempAvatar.jpg")
+            }
             style={styles.avatar}
           ></Image>
           <TextInput
@@ -93,6 +98,8 @@ export default class PostScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 64,
+    paddingBottom: 16,
   },
   header: {
     flexDirection: "row",
