@@ -98,7 +98,8 @@ const styles = StyleSheet.create({
     },
     form: {
         marginBottom: 48,
-        marginHorizontal: 30
+        marginHorizontal: 30,
+        borderColor: 'blue'
     },
     inputTitle: {
         color: "#8A8F9E",
@@ -106,11 +107,12 @@ const styles = StyleSheet.create({
         textTransform: "uppercase"
     },
     input: {
-        borderBottomColor: "#8A8F9E",
+        borderBottomColor: "blue",
         borderBottomWidth: StyleSheet.hairlineWidth,
+        borderColor: 'blue',
         height: 40,
         fontSize: 15,
-        color: "#161F3D"
+        color: "blue"
     },
     button: {
         marginHorizontal: 30,

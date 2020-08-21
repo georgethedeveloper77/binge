@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, FlatList } from "react-native";
+import { View, StyleSheet, Image, FlatList } from "react-native";
+import { Text } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import moment from "moment";
 
@@ -95,7 +96,7 @@ const styles = StyleSheet.create({
     header: {
         paddingTop: 64,
         paddingBottom: 16,
-        backgroundColor: "#FFF",
+        backgroundColor: "#3E51B5",
         alignItems: "center",
         justifyContent: "center",
         borderBottomWidth: 1,
@@ -108,10 +109,10 @@ const styles = StyleSheet.create({
     },
     headerTitle: {
         fontSize: 20,
-        fontWeight: "500"
+        fontWeight: "500",
     },
     feed: {
-        marginHorizontal: 16
+        marginHorizontal: 16,
     },
     feedItem: {
         backgroundColor: "#FFF",
