@@ -1,7 +1,7 @@
 import React from "react";
 import {
   View,
-  Text,
+  //Text,
   ActivityIndicator,
   StyleSheet,
   Animated,
@@ -74,10 +74,9 @@ export default class LoadingScreen extends React.Component {
           }
         >
           {whiteLayer}
-          <ActivityIndicator size="large" color="blue"></ActivityIndicator>
 
           <Animated.View style={[opacity, styles.centered]}>
-            <Text>Your app goes here!!</Text>
+            <ActivityIndicator size="large" color="blue"></ActivityIndicator>
           </Animated.View>
         </MaskedViewIOS>
       </View>
