@@ -53,10 +53,10 @@ export default class PostScreen extends React.Component {
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>
           <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
-            <Ionicons name="md-arrow-back" size={38} color="#D8D9DB"></Ionicons>
+            <Ionicons name="md-arrow-back" size={48} color="#D8D9DB"></Ionicons>
           </TouchableOpacity>
           <TouchableOpacity onPress={this.handlePost}>
-            <Text style={{ fontWeight: "800" }}>Post</Text>
+            <Text style={{ fontWeight: "900" }}>Post</Text>
           </TouchableOpacity>
         </View>
 

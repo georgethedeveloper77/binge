@@ -2,7 +2,7 @@ import React from "react";
 import {
   View,
   //Text,
-  ActivityIndicator,
+ // ActivityIndicator,
   StyleSheet,
   Animated,
   MaskedViewIOS,
@@ -32,7 +32,7 @@ export default class LoadingScreen extends React.Component {
 
   render() {
     const colorLayer = this.state.animationDone ? null : (
-      <View style={[StyleSheet.absoluteFill, { backgroundColor: "#7F23D9" }]} />
+      <View style={[StyleSheet.absoluteFillObject, { backgroundColor: "#2c4fb8" }]} />
     );
 
     const whiteLayer = this.state.animationDone ? null : (
@@ -68,7 +68,7 @@ export default class LoadingScreen extends React.Component {
               <Animated.Image
                 source={require("../assets/logo.png")}
                 style={[{ width: 1000 }, imageScale]}
-                resizeMode="contain"
+                resizeMode="cover"
               />
             </View>
           }
@@ -76,7 +76,6 @@ export default class LoadingScreen extends React.Component {
           {whiteLayer}
 
           <Animated.View style={[opacity, styles.centered]}>
-            <ActivityIndicator size="large" color="blue"></ActivityIndicator>
           </Animated.View>
         </MaskedViewIOS>
       </View>
