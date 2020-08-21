@@ -14,6 +14,17 @@ import PostScreen from "./screens/PostScreen";
 import NotificationScreen from "./screens/NotificationScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 
+import { YellowBox } from 'react-native';
+import _ from 'lodash';
+
+YellowBox.ignoreWarnings(['Setting a timer']);
+const _console = _.clone(console);
+console.warn = message => {
+  if (message.indexOf('Setting a timer') <= -1) {
+    _console.warn(message);
+  }
+};
+
 const AppContainer = createStackNavigator(
   {
     default: createBottomTabNavigator(
@@ -22,7 +33,7 @@ const AppContainer = createStackNavigator(
           screen: HomeScreen,
           navigationOptions: {
             tabBarIcon: ({ tintColor }) => (
-              <Ionicons name="ios-home" size={24} color={tintColor} />
+              <Ionicons name="ios-home" size={28} color={tintColor} />
             ),
           },
         },
@@ -64,7 +75,7 @@ const AppContainer = createStackNavigator(
           screen: ProfileScreen,
           navigationOptions: {
             tabBarIcon: ({ tintColor }) => (
-              <Ionicons name="ios-person" size={24} color={tintColor} />
+              <Ionicons name="ios-person" size={28} color={tintColor} />
             ),
           },
         },

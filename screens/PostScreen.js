@@ -20,6 +20,7 @@ export default class PostScreen extends React.Component {
   };
 
   componentDidMount() {
+    this._isMounted = true;
     UserPermissions.getCameraPermission;
   }
 
@@ -52,10 +53,10 @@ export default class PostScreen extends React.Component {
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>
           <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
-            <Ionicons name="md-arrow-back" size={24} color="#D8D9DB"></Ionicons>
+            <Ionicons name="md-arrow-back" size={38} color="#D8D9DB"></Ionicons>
           </TouchableOpacity>
           <TouchableOpacity onPress={this.handlePost}>
-            <Text style={{ fontWeight: "500" }}>Post</Text>
+            <Text style={{ fontWeight: "800" }}>Post</Text>
           </TouchableOpacity>
         </View>
 
@@ -95,11 +96,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
+    alignItems:"baseline",
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingHorizontal: 32,
-    paddingVertical: 30,
-    borderBottomWidth: 1,
+    paddingHorizontal: 50,
+    paddingVertical: 40,
+    borderBottomWidth: 0,
     borderBottomColor: "#3E51B5",
     backgroundColor: "#3E51B5",
   },
