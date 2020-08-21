@@ -28,6 +28,8 @@ export default class RegisterScreen extends React.Component {
     errorMessage: null,
   };
 
+  unsubscribe = null;
+
   handleSignUp = () => {
     Fire.shared.createUser(this.state.user);
   };

@@ -21,7 +21,9 @@ export default class ProfileScreen extends React.Component {
   };
 
   state = {
-    user: {},
+    user: {
+      avatar: null,
+    },
     errorMessage: null,
   };
 
