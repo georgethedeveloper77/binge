@@ -15,7 +15,7 @@ import Fire from "../Fire";
 
 export default class RegisterScreen extends React.Component {
   static navigationOptions = {
-    headerShown: false,
+    header: null,
   };
 
   state = {
@@ -78,7 +78,7 @@ export default class RegisterScreen extends React.Component {
         >
           <Text
             style={styles.greeting}
-          >{`Hello!\nSign up to get started n pick image.`}</Text>
+          >{`Hello!\nSign up to get started.`}</Text>
           <TouchableOpacity
             style={styles.avatarPlaceholder}
             onPress={this.handlePickAvatar}

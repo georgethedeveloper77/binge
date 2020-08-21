@@ -2,7 +2,6 @@ import React from "react";
 import { View, Text, StyleSheet, Image, FlatList } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import moment from "moment";
-import Fire from "../Fire";
 
 // temporary data until we pull from Firebase
 posts = [
@@ -44,14 +43,11 @@ posts = [
   },
 ];
 
-const firebase = require("firebase");
-require("firebase/firestore");
-
 export default class HomeScreen extends React.Component {
-  renderPost = (Fire) => {
+  renderPost = (post) => {
     return (
       <View style={styles.feedItem}>
-        <Image source={Fire.avatar} style={styles.avatar} />
+        <Image source={post.avatar} style={styles.avatar} />
         <View style={{ flex: 1 }}>
           <View
             style={{
@@ -61,17 +57,17 @@ export default class HomeScreen extends React.Component {
             }}
           >
             <View>
-              <Text style={styles.name}>{Fire.name}</Text>
+              <Text style={styles.name}>{post.name}</Text>
               <Text style={styles.timestamp}>
-                {moment(Fire.timestamp).fromNow()}
+                {moment(post.timestamp).fromNow()}
               </Text>
             </View>
 
             <Ionicons name="ios-more" size={24} color="#73788B" />
           </View>
-          <Text style={styles.post}>{Fire.text}</Text>
+          <Text style={styles.post}>{post.text}</Text>
           <Image
-            source={Fire.image}
+            source={post.image}
             style={styles.postImage}
             resizeMode="cover"
           />
@@ -116,7 +112,7 @@ const styles = StyleSheet.create({
   header: {
     paddingTop: 64,
     paddingBottom: 16,
-    backgroundColor: "#1765CC",
+    backgroundColor: "#FFF",
     alignItems: "center",
     justifyContent: "center",
     borderBottomWidth: 1,
@@ -130,7 +126,6 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 20,
     fontWeight: "500",
-    backgroundColor: "transparent",
   },
   feed: {
     marginHorizontal: 16,
